@@ -15,7 +15,6 @@ function AddAppointments({user}) {
   const navigate = useNavigate();
 
   const [services, setServices] = useState([]);
-  const [dropdownVisible, setDropdownVisible] = useState(false);
   const [deliveryAddress, setDeliveryAddress] = useState('');
   const [pickupAddress, setPickupAddress] = useState('');
   const [date, setDate] = useState('');
@@ -50,7 +49,17 @@ function AddAppointments({user}) {
       if (!selectedServiceId) {
         alert("Debes seleccionar un servicio");
         return;
+      } else if(!pickupAddress) {
+        alert("Debes ingresar una dirección de recogida");
+        return;
+      } else if(!deliveryAddress) {
+        alert("Debes ingresar una dirección de entrega");
+        return;
+      } else if(!date) {
+        alert("Debes ingresar una fecha");
+        return;
       }
+      
       const { result, error } = await supabase
       .from('appointments')
       .insert([

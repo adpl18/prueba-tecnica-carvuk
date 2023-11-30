@@ -38,4 +38,10 @@ El componente ```Home``` tiene 6 funciones:
 - ```deleteAppointment```: borra un servicio programado.
 - ```findServicesById```: encuentra el servicio por su id.
 
+El componente ```AddAppointments``` tiene 4 funciones:
+- ```handleServiceClick```: guarda el servicio elegido, si es uno que no está disponible mantiene la variable en null de forma que al mandar el cuestionario no se pueda.
+- ```handleDateChange```: guarda la fecha elegida
+- ```handleSubmit```: envía el servicio programado (hace post) y revisa que vengan todos los datos o sino entrega una alerta.
+- ```getServices```: obtiene todos los servicios.
+
 Intente tener un archivo como ```client.js``` dentro de una carpeta ```supabase``` donde creara el cliente de supabase y luego importara en los otros archivos, pero no me resultó y no le di mucha vuelta, al igual que para las variables de entorno, me hubiera gustado tenerlas en un archivo ```.env``` y no en ```config.js```.
