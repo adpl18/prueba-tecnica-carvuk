@@ -3,8 +3,8 @@
 Credenciales:
 - mail: janolo3246@notedns.com
 - clave: carvuk2023test
-Si estas credenciales no funcionan, es posible crearse una cuenta.
 
+Si estas credenciales no funcionan, es posible crearse una cuenta.
 
 Se crearon 3 bases de datos nuevas y se uso la de usuarios.
 Tabla 1: services (Todos los servicios disponibles)
