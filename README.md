@@ -1,5 +1,11 @@
 # Asunción Domínguez Ponce de León
 
+// Desde esta línea del README hasta que salga FIN fue agregado fuera de plazo (se me olvidó agregar las instrucciones para correr la aplicación)
+Para correr la aplicación:
+- ```npm install```
+- ```npm run dev```
+// FIN
+
 Credenciales:
 - mail: janolo3246@notedns.com
 - clave: carvuk2023test
