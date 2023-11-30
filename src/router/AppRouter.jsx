@@ -5,7 +5,7 @@ import Session from '../auth/Session';
 import { createClient } from '@supabase/supabase-js';
 import { API_KEY, API_URL } from "../../config";
 import Home from '../views/Home';
-import AddServices from '../views/AddServices';
+import AddAppointments from '../views/AddAppointments';
 
 const supabase = createClient(API_URL, API_KEY);
 
@@ -28,7 +28,7 @@ const AppRouter = () => {
 			{isAuthenticated ? (
 				<Route path="/">
 					<Route index element={<Home user={user}/>} />
-					<Route path="addservices" element={<AddServices user={user} />} />
+					<Route path="addappointments" element={<AddAppointments user={user} />} />
 				</Route>
 			) : (
 				<Route path="/">

@@ -9,7 +9,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 const supabase = createClient(API_URL, API_KEY);
 
-function AddServices({user}) {
+function AddAppointments({user}) {
   const location = useLocation();
   const {carId} = location.state;
   const navigate = useNavigate();
@@ -120,4 +120,4 @@ function AddServices({user}) {
   );
 }
 
-export default AddServices;
+export default AddAppointments;

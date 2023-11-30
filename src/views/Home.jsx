@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { API_KEY, API_URL } from "../../config";
 import Session from "../auth/Session";
-import AddServices from "./AddServices";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const supabase = createClient(API_URL, API_KEY);
@@ -19,7 +17,7 @@ function Home({user}) {
     getCar();
     getAppointments();
     getServices();
-  }, []);
+  }, [car]);
 
   async function getCar() {    
     let { data: cars, error } = await supabase
@@ -59,7 +57,8 @@ function Home({user}) {
 
   async function getAppointments() {
     try {
-      const { data, error } = await supabase.from("appointments").select();
+      console.log('car', car)
+      const { data, error } = await supabase.from("appointments").select().eq('carId', car[0].id);
       if (error) {
         console.log('Error obteniendo servicios programados', error);
       } else {
@@ -129,7 +128,7 @@ function Home({user}) {
       }
 
       <button onClick={() => {
-        navigate('/addservices', { state: {carId: car[0].id} });
+        navigate('/addappointments', { state: {carId: car[0].id} });
       }}>Agregar un nuevo servicio</button>
 
       <h2>Servicios programados</h2>
